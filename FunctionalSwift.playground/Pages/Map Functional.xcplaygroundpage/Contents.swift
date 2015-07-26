@@ -1,3 +1,7 @@
+var myArray : [Int] = [3,4,5]
+
+// 1) //////////////////////////////////////////////////////////
+
 func doubleTheElementsOfMyIntegerArray(inputArray: [Int]) -> [Int] {
 
     var resultArray: [Int] = []
@@ -10,54 +14,66 @@ func doubleTheElementsOfMyIntegerArray(inputArray: [Int]) -> [Int] {
     return resultArray
 }
 
-func applyAFunctionToElementsOfMyIntegerArrayAndReturnAnIntegerArray(inputArray: [Int], fonksiyon: Int -> Int) -> [Int] {
+var doubledArray = doubleTheElementsOfMyIntegerArray(myArray)
+doubledArray
+
+// 2) ////////////////////////////////////////////////////////
+
+func applyAFunctionToElementsOfMyIntegerArrayAndReturnAnIntegerArray(inputArray: [Int], theFunction: Int -> Int) -> [Int] {
     
     var resultArray: [Int] = []
     
     for integer in inputArray {
         
-        resultArray.append(fonksiyon(integer))
+        resultArray.append(theFunction(integer))
     }
     
     return resultArray
 }
-
-func applyAFunctionToElementsOfMyIntegerArrayAndReturnAnArray<G>(inputArray: [Int], fonksiyon: Int -> G) -> [G] {
-    
-    var resultArray: [G] = []
-    
-    for gValue in inputArray {
-        
-        resultArray.append(fonksiyon(gValue))
-    }
-    
-    return resultArray
-    
-}
-
-func applyAFunctionToElementsOfMyArrayAndReturnAnArray<G,B>(inputArray: [B], fonksiyon: B -> G) -> [G] {
-    
-    var resultArray: [G] = []
-    
-    for gValue in inputArray {
-        
-        resultArray.append(fonksiyon(gValue))
-    }
-    
-    return resultArray
-    
-}
-
-var myArray : [Int] = [3,4,5]
-
-var doubledArray = doubleTheElementsOfMyIntegerArray(myArray)
-doubledArray
 
 var funcedArray = applyAFunctionToElementsOfMyIntegerArrayAndReturnAnIntegerArray(myArray) { x in x + 5 }
 funcedArray
 
+// 3) ////////////////////////////////////////////////////////
+
+func applyAFunctionToElementsOfMyIntegerArrayAndReturnAnArray<G>(inputArray: [Int], theFunction: Int -> G) -> [G] {
+    
+    var resultArray: [G] = []
+    
+    for gValue in inputArray {
+        
+        resultArray.append(theFunction(gValue))
+    }
+    
+    return resultArray
+    
+}
+
 var funcedArray2 = applyAFunctionToElementsOfMyIntegerArrayAndReturnAnArray(myArray) { x in return x > 4 }
 funcedArray2
+
+// 4) ////////////////////////////////////////////////////////
+
+func applyAFunctionToElementsOfMyArrayAndReturnAnArray<G,B>(inputArray: [B], theFunction: B -> G) -> [G] {
+    
+    var resultArray: [G] = []
+    
+    for gValue in inputArray {
+        
+        resultArray.append(theFunction(gValue))
+    }
+    
+    return resultArray
+    
+}
+
+
+
+
+
+
+
+
 
 var myArray2 : [String] = ["ABC", "DE", "EFGHFH"]
 
