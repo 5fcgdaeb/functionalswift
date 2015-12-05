@@ -60,11 +60,11 @@ func applyAFunctionToElementsOfMyIntegerArrayAndReturnAnArray<T>(inputArray: [In
     return resultArray
 }
 
-struct GreaterThanFourMutator : ElementMutator {
-    func mutateIntElement<Bool>(inputElement: Int) -> Bool {
-        return inputElement > 4
-    }
-}
+//struct GreaterThanFourMutator : ElementMutator {
+//    func mutateIntElement<String>(inputElement: Int) -> String {
+//        return "Abc" ?? ""
+//    }
+//}
 
 //let fiveMutator = AddFiveMutator()
 //var mutatedArray = applyAFunctionToElementsOfMyIntegerArrayAndReturnAnIntegerArray(myArray, mutator: fiveMutator)

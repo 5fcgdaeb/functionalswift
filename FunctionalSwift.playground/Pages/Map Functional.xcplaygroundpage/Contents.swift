@@ -67,18 +67,15 @@ func applyAFunctionToElementsOfMyArrayAndReturnAnArray<G,B>(inputArray: [B], the
     
 }
 
-
-
-
-
-
-
-
-
 var myArray2 : [String] = ["ABC", "DE", "EFGHFH"]
 
 var funcedArray3 = applyAFunctionToElementsOfMyArrayAndReturnAnArray(myArray2) { x in return x.characters.count }
 funcedArray3
+
+
+// 5) Actual Map Implementaiona 
+var funcedArray4 = myArray2.map { x in return x.characters.count }
+funcedArray4
 
 
 
